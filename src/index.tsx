@@ -3,13 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { ModalProvider } from './context/ModalProvider';
+import CompositeProvider from './context/CompositeProvider';
+import { MetaMaskProvider } from "metamask-react";
+import { SwapProvider } from './context/SwapProvider';
+import Modal from './components/modal/Modal';
+import SwapComponent from './components/swap/SwapComponent';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+<CompositeProvider providers={[ModalProvider, MetaMaskProvider, SwapProvider]}>
+       <>
+       <Modal>
+        <SwapComponent />
+      </Modal>
+            <App />
+       </>
+</CompositeProvider>
   </React.StrictMode>
 );
 

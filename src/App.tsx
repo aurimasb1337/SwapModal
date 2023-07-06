@@ -1,25 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TriggerComponent from './components/trigger/TriggerComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App" data-testid='app'>
+        <header className="App-header  bg-gray-900 ">
+          <h3 data-testid='home-title' className="absolute top-20 left-1/2 transform -translate-x-1/2">Some <i>"Lorem Ipsum"</i> to prove it will get blurry. 🤓</h3>
+          <div className="flex items-center justify-center h-screen">
+            <TriggerComponent type='swapModal' />
+          </div>
+        </header>
+      </div>
+    
   );
 }
 

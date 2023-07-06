@@ -1,0 +1,1 @@
+export type modalType = 'swapModal' | 'swapModalV2'; 
