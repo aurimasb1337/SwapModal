@@ -35,7 +35,7 @@ const SwapForm: React.FC = () => {
             value={maticAmount}
             onChange={handleMaticInputChange}
             placeholder="Enter MATIC token amount"
-            className="block w-full h-16 px-3 py-2 border bg-gray-800 text-white border-gray-700 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            className="block w-full h-16 px-3 py-2 border bg-gray-800 text-gray-200 border-gray-700 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 pointer-events-none">
             MATIC

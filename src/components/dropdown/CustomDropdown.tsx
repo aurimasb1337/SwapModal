@@ -42,10 +42,10 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ open = false }) => {
   return (
     <div ref={dropdownRef} data-testid="select-dropdown"  className="relative inline-block">
       <div
-        className="flex items-center justify-between block w-full h-16 appearance-none bg-gray-800 text-white px-3 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        className="flex items-center justify-between block w-full h-16 appearance-none bg-gray-800 text-gray-200 px-3 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         onClick={toggleDropdown}
       >
-        <span className="text-white" data-testid="select-placeholder">{targetSwapToken?.name || "Select token"}</span>
+        <span className="text-gray-200" data-testid="select-placeholder">{targetSwapToken?.name || "Select token"}</span>
       <div className="flex items-center justify-center">
         <span className="text-gray-500">{targetSwapToken?.symbol}</span>
       <svg

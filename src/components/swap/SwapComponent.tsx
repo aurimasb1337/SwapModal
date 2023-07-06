@@ -38,7 +38,7 @@ const SwapComponent: React.FC = () => {
 
   return (
     <div className='m-3'>
-      <div className="text-white text-center pb-6 ">MATIC Balance: {maticBalance}</div>
+      <div className=" text-lg text-gray-100 text-center pb-6 ">MATIC Balance: {maticBalance}</div>
       <SwapForm/>
     </div>
   );
