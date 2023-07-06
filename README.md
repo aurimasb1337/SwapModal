@@ -7,7 +7,7 @@ This project is a Swap Modal that allows users to connect using MetaMask and swa
 
 - Clone the repository
    - `git clone https://github.com/your-username/swap-modal-project.git`
-   - `cd swap-modal-project`
+   - `cd SwapModal`
 - Install dependencies:
   - `npm install`
     
