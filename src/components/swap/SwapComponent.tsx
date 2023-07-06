@@ -3,7 +3,7 @@ import MetamaskHandler from '../metamask/MetamaskHandler';
 import { useMetaMask } from 'metamask-react';
 import SwapForm from './SwapForm';
 import { SwapContext } from '../../context/SwapProvider';
-import { fetchMaticAmount } from '../../util/swapUtils/swapUtils';
+import { getMaticBalance } from '../../util/swapUtils/swapUtils';
 declare global {
   interface Window {
     ethereum: any;
@@ -17,10 +17,9 @@ const SwapComponent: React.FC = () => {
   useEffect(() => {
     const fetchMaticBalance = async () => {
         try {
-          const maticBalance = await fetchMaticAmount();
+          const maticBalance = await getMaticBalance();
           setMaticBalance(maticBalance);
         } catch (error) {
-          // Handle any errors that occur during the process
           console.log('Error:', error);
         }
     };
@@ -39,7 +38,6 @@ const SwapComponent: React.FC = () => {
 
   return (
     <div className='m-3'>
-    
       <div className="text-white text-center pb-6 ">MATIC Balance: {maticBalance}</div>
       <SwapForm/>
     </div>

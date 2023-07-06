@@ -32,7 +32,7 @@ export const swapMaticToToken = async (
   }
 };
 
-export const fetchMaticAmount = async (): Promise<string> => {
+export const getMaticBalance = async (): Promise<string> => {
   if (typeof window.ethereum !== 'undefined') {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);

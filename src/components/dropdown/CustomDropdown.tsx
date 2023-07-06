@@ -3,9 +3,12 @@ import { erc20Tokens } from "../../util/tokens/tokens";
 import { tokenType } from "../../util/types/tokenType";
 import { SwapContext } from "../../context/SwapProvider";
 
-const CustomDropdown: React.FC = () => {
+interface CustomDropdownProps {
+  open?: boolean;
+}
 
-  const [open, setOpen] = useState<boolean>(false);
+const CustomDropdown: React.FC<CustomDropdownProps> = ({ open = false }) => {
+  const [isOpen, setOpen] = useState<boolean>(open);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const {targetSwapToken, setTargetSwapToken} = useContext(SwapContext);
 
@@ -16,7 +19,7 @@ const CustomDropdown: React.FC = () => {
   };
 
   const toggleDropdown = () => {
-    setOpen(!open);
+    setOpen(!isOpen);
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -37,17 +40,17 @@ const CustomDropdown: React.FC = () => {
   }, []);
 
   return (
-    <div ref={dropdownRef} className="relative inline-block">
+    <div ref={dropdownRef} data-testid="select-dropdown"  className="relative inline-block">
       <div
         className="flex items-center justify-between block w-full h-16 appearance-none bg-gray-800 text-white px-3 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         onClick={toggleDropdown}
       >
-        <span className="text-white">{targetSwapToken?.name || "Select token"}</span>
+        <span className="text-white" data-testid="select-placeholder">{targetSwapToken?.name || "Select token"}</span>
       <div className="flex items-center justify-center">
         <span className="text-gray-500">{targetSwapToken?.symbol}</span>
       <svg
           className={`w-4 h-4 ml-2 transition-transform duration-200 transform ${
-            open ? "rotate-180" : ""
+            isOpen ? "rotate-180" : ""
           }`}
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -60,12 +63,12 @@ const CustomDropdown: React.FC = () => {
       </div>
       </div>
 
-      {open && (
-        <div className="absolute mt-0 py-2 w-full bg-gray-800 border border-gray-600 rounded shadow  ">
+      {isOpen && (
+        <div  className={`absolute mt-0 py-2 w-full bg-gray-800 border border-gray-600 rounded shadow`}>
           {erc20Tokens.map((token) => (
             <div
               key={token.symbol}
-              className="px-4 py-2 cursor-pointer hover:bg-purple-800 transition-all text-gray-200"
+              className={`px-4 py-2 cursor-pointer  hover:bg-gray-700 transition-all text-gray-200 ${targetSwapToken?.symbol===token.symbol ? 'bg-gray-700' : 'bg-gray-800'}`}
               onClick={() => handleOptionClick(token)}
             >
               {token.name}
