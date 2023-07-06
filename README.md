@@ -5,28 +5,30 @@ This project is a Swap Modal that allows users to connect using MetaMask and swa
 ## Setup
 
 1. Clone the repository:
-
-   git clone https://github.com/your-username/swap-modal-project.git
-   cd swap-modal-project
+   - `git clone https://github.com/your-username/swap-modal-project.git`
+   - `cd swap-modal-project`
 
 ## Usage
 
-npm install 
-npm start     
-npm test       
-
-
-----------------------------------------------
-
-
-run npm install to install the dependencies
-after installing run npm start to start development server @ localhost:3000 
-to run tests simply type npm test
+- Install dependencies:
+  - `npm install`
+- Start the development server:
+  - `npm start`
+  - This command installs the project dependencies and starts the development server. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+- Run tests:
+  - `npm test`
+  - This command runs the test runner and executes all the tests.
 
 ## Technologies Used
-React
-MetaMask
-ethers.js
+
+- React
+- MetaMask
+- ethers.js
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the MIT License.
+
+This project is licensed under the [MIT License](LICENSE).
