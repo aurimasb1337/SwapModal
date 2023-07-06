@@ -1,6 +1,7 @@
-# Swap Modal Project 💱
+![image](https://github.com/aurimasb1337/SwapModal/assets/50990952/42c1f7bb-d0da-418e-b72e-a2d593f3122c)# Swap Modal Project 💱
 
 This project is a Swap Modal that allows users to connect using MetaMask and swap Matic tokens to other ERC20 tokens.
+![image](https://github.com/aurimasb1337/SwapModal/assets/50990952/fba07734-522f-42d3-a810-a44c3aff51f1)
 
 ## Setup
 
